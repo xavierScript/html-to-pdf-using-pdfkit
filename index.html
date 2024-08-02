@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Environmental Incident Report Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        width: 80%;
+        margin: auto;
+      }
+      h1 {
+        text-align: center;
+      }
+      .section-header {
+        background-color: #002060;
+        color: white;
+        padding: 10px;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .form-group input[type="checkbox"] {
+        width: auto;
+      }
+      .form-group .checkbox-group {
+        display: flex;
+        flex-direction: column;
+      }
+      .form-group .checkbox-group label {
+        font-weight: normal;
+      }
+      .form-group .checkbox-group input {
+        margin-right: 10px;
+      }
+      button {
+        background-color: #002060;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Environmental Incident Report Form</h1>
+      <form action="/generate-pdf" method="post">
+        <div class="section">
+          <div class="section-header">INCIDENT DETAILS</div>
+          <div class="form-group">
+            <label for="incident-datetime">Date and time of the incident</label>
+            <input
+              type="text"
+              id="incident-datetime"
+              name="incident-datetime"
+            />
+          </div>
+          <div class="form-group">
+            <label for="incident-location">Location of the incident</label>
+            <input
+              type="text"
+              id="incident-location"
+              name="incident-location"
+            />
+          </div>
+          <div class="form-group">
+            <label for="incident-description">Describe the incident</label>
+            <textarea
+              id="incident-description"
+              name="incident-description"
+              rows="4"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="witness-details"
+              >Details of the witnesses, if any</label
+            >
+            <textarea
+              id="witness-details"
+              name="witness-details"
+              rows="4"
+            ></textarea>
+          </div>
+        </div>
+        <div class="section">
+          <div class="section-header">ENVIRONMENTAL IMPACT</div>
+          <div class="form-group checkbox-group">
+            <label
+              >Select the appropriate category for the environmental
+              incident:</label
+            >
+            <label
+              ><input type="checkbox" name="impact" value="Air Pollution" /> Air
+              Pollution</label
+            >
+            <label
+              ><input type="checkbox" name="impact" value="Water Pollution" />
+              Water Pollution</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                name="impact"
+                value="Soil Contamination"
+              />
+              Soil Contamination</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                name="impact"
+                value="Hazardous Material Spill"
+              />
+              Hazardous Material Spill</label
+            >
+            <label
+              ><input type="checkbox" name="impact" value="Noise Pollution" />
+              Noise Pollution</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                name="impact"
+                value="Wildlife Disturbance"
+              />
+              Wildlife Disturbance</label
+            >
+            <label
+              ><input type="checkbox" name="impact" value="Other" /> Other
+              (specify)</label
+            >
+            <input type="text" id="impact-other" name="impact-other" />
+          </div>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
